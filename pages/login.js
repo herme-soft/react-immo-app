@@ -34,7 +34,7 @@ const FormPage = () => {
                             label="Nom d'utilisateur" 
                             icon="user"
                             name="username" 
-                            group type="email" 
+                            group
                             type="text"
                             onChange={handleChange("username")}
                         />
