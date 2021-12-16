@@ -1,16 +1,130 @@
-html,
-body {
+.boxShadow {
+  -webkit-box-shadow: 0 2px 5px 0 rgb(0, 0, 0 0.7), 0 2px 10px 0 rgb(0, 0, 0, 0.5) !important;
+  box-shadow: 0 2px 5px 0 rgb(0, 0, 0 0.7), 0 2px 10px 0 rgb(0, 0, 0, 0.5) !important;
+}
+
+.bdCard {
+  border: 0 !important;
+}
+
+.bdRadius {
+  border-radius: 0 !important;
+}
+
+.bd-radius {
+  height: 50px;
+  width: 50px;
+  border-radius: 100% !important;
+}
+
+/* .cursor {
+  cursor: pointer !important;
+} */
+
+/* .card {
+  -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none !important;
+  background: rgb(243, 243, 243) !important;
+  border: none;
+} */
+
+.card-body {
+  border: none !important;
+}
+
+a.z-depth-2 {
+  -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none !important;
+}
+
+
+.globalImgCard {
+  height: 260px !important;
+  width: 100%;
+  object-fit: cover;
+  transform: scale(1);
+}
+
+/* a.z-depth-2   {
+  display: block !important;
+  overflow: hidden !important;
+}
+
+.globalImgCard a:hover .globalImg  {
+  transform: scale(1.5) !important;
+} */
+
+.globalImg {
+  width: 100%;
+  height: auto;
+  transform: scale(1.1);
+}
+
+.globalButton {
+  border-radius: 20px;
+  background-color: #00695c;
+  border: none;
+  color: #fff;
+  padding: 10px 25px;
+  font-size: 13px;
+}
+
+.globalColor {
+  color: #00695c;
+}
+
+.activated {
+  font-weight: bold;
+  background-color: #00695c;
+  pointer-events: none;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.custom-paginate {
+  display: flex;
+  list-style: none;
+  height: 40px;
+  /* border: 1px solid #bdbdbd; */
+  border: none;
+  border-radius: 5px;
+  width: fit-content;
+  align-items: center;
   padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  margin-top: 40px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.paginate {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 10px;
+  cursor: pointer;
 }
 
-* {
-  box-sizing: border-box;
+.paginate:nth-child(7) {
+  margin-right: 10px;
+}
+
+
+@media screen and (min-width: 768px) {
+  .globalImg {
+    width: 100%;
+    height: 250px;
+  }
+
+  .carouselItems {
+    transform: translate(0%, -30%);
+  }
+
+  .carouselMain {
+    height: 530px;
+  }
+
+  .paginateCenter {
+    width: 35%;
+    margin: 0 auto;
+  }
 }
