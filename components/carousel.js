@@ -56,16 +56,6 @@ export const Carousel = () => {
           </MDBCarouselItem>
         </MDBCarouselInner>
       </MDBCarousel>
-      {/* <style jsx>
-            {
-                `@media (max-width: 768px) {
-                    .h3-responsive {
-                      font-size: 1.8rem;
-                    }
-                }
-                `
-            }
-        </style> */}
     </MDBContainer>
   );
 }
