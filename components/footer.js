@@ -64,7 +64,7 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/contact">
+                <Link href="/contact" passHref>
                     <a className="nav-link">
                         Contact
                     </a>
