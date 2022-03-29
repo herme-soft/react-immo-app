@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from "next/link"
-import { MDBCard, MDBCardImage } from "mdbreact"
+import { MDBCard } from "mdbreact"
 import { priceFormatted } from './helpers'
 
 export const CardVip = ({ properties }) => {
@@ -9,14 +9,9 @@ export const CardVip = ({ properties }) => {
             {
               properties && properties.map(property => (
                 <MDBCard className="mb-2" key={property._id}>
-                    {/* <img 
-                        src={property.pictures[0]} 
-                        className="d-block w-100"
-                        alt="" 
-                    /> */}
                     <Link href="/property/[slug]" as={`/property/${property.slug}`}>
                         <a className="rounded z-depth-2 mb-lg-0 mb-4">
-                            <img src={property.pictures[0]} alt={property.title} className="d-block w-100" />
+                            <img src={property.pictures[0]} alt={property.title} className="imgSponsor d-block w-100" />
                         </a>
                     </Link>
                     <div className="imgTop">
@@ -30,7 +25,32 @@ export const CardVip = ({ properties }) => {
               ))  
             }
             <style jsx>
-                {`
+                {
+                    `.imgSponsor {
+                        height: 160px;
+                        width: 100%;
+                        object-fit: cover;
+                        transform: scale(1.1);
+                        transition: .2s ease-in-out;
+                    }
+
+                    .imgSponsor {
+                        width: 100%;
+                        object-fit: cover;
+                        transform: scale(1.1);
+                        transition: .2s ease-in-out;
+                    }
+                    
+                    a.z-depth-2   {
+                        display: block;
+                        overflow: hidden;
+                    }
+                    
+                    a.z-depth-2:hover .imgSponsor  {
+                        transform: scale(1.5);
+                        transition: .2s ease-in-out;
+                    }
+
                     .imgTop {
                         position: absolute;
                         top: 10px;
@@ -62,8 +82,8 @@ export const CardVip = ({ properties }) => {
                         left: 16px;
                         font-weight: bold;
                         color: white;
-                    }
-                `}
+                    }`
+                }
             </style>
         </>
     )

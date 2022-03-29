@@ -26,34 +26,38 @@ const FormPage = () => {
 
     return (
         <Layout>
-            <MDBContainer>
-                <form onSubmit={handleSubmit}>
-                    <p className="h4 text-center my-4">Connexion</p>
-                    <div className="grey-text">
-                        <MDBInput 
-                            label="Nom d'utilisateur" 
-                            icon="user"
-                            name="username" 
-                            group
-                            type="text"
-                            onChange={handleChange("username")}
-                        />
+            <section className="login mTop">
+                <MDBContainer>
+                    <div className="card col-xl-6 col-lg-6 col-md-6 col-12 mx-auto p-5">
+                        <form onSubmit={handleSubmit}>
+                            <p className="h4 text-center my-4">Connexion</p>
+                            <div className="grey-text">
+                                <MDBInput 
+                                    label="Nom d'utilisateur: johndoe" 
+                                    icon="user"
+                                    name="username" 
+                                    group
+                                    type="text"
+                                    onChange={handleChange("username")}
+                                />
 
-                        <MDBInput 
-                            label="Mot de passe"
-                            name="password"
-                            icon="lock" 
-                            group 
-                            type="password" 
-                            onChange={handleChange("password")}
-                            validate
-                        />
+                                <MDBInput 
+                                    label="Mot de passe: secret"
+                                    name="password"
+                                    icon="lock" 
+                                    group 
+                                    type="password" 
+                                    onChange={handleChange("password")}
+                                    validate
+                                />
+                            </div>
+                            <div className="text-center">
+                                <button type="submit" onClick={handleSubmit} className="globalButton">Connexion</button>
+                            </div>
+                        </form>
                     </div>
-                    <div className="text-center">
-                        <button type="submit" onClick={handleSubmit} className="globalButton">Connexion</button>
-                    </div>
-                </form>
-            </MDBContainer>
+                </MDBContainer>
+            </section>
         </Layout>
     );
 };

@@ -1,10 +1,71 @@
+/* ----------------------------------------------- 
+# GENERAL 
+------------------------------------------------ */
+
+.section {
+  padding: 5.5rem 0 3rem;
+}
+
 .boxShadow {
   -webkit-box-shadow: 0 2px 5px 0 rgb(0, 0, 0 0.7), 0 2px 10px 0 rgb(0, 0, 0, 0.5) !important;
   box-shadow: 0 2px 5px 0 rgb(0, 0, 0 0.7), 0 2px 10px 0 rgb(0, 0, 0, 0.5) !important;
 }
 
+.mTop {
+  margin-top: 10%;
+}
+
+
+/* ----------------------------------------------- 
+# HOME 
+------------------------------------------------ */
+
+nav {
+  width: 100%;
+  background-color: #00695c;
+  position: fixed !important;
+  top: 0;
+  z-index: 20;
+  transition: .2s all;
+}
+
+.carousel-item::before {
+  content: '';
+  position: absolute;
+  background: linear-gradient(to right, rgba(0,0,0,0.6550), rgba(0,0,0,0.1));
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 60%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 50%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+} 
+
+.h3-responsive {
+  font-size: 3rem !important;
+  font-weight: 600;
+}
+
+.carousel-caption p {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
 .bdCard {
   border: 0 !important;
+  padding: 0.5rem !important;
 }
 
 .bdRadius {
@@ -17,18 +78,6 @@
   border-radius: 100% !important;
 }
 
-/* .cursor {
-  cursor: pointer !important;
-} */
-
-/* .card {
-  -webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none !important;
-  background: rgb(243, 243, 243) !important;
-  border: none;
-} */
-
 .card-body {
   border: none !important;
 }
@@ -37,29 +86,18 @@ a.z-depth-2 {
   -webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
 }
 
-
-.globalImgCard {
-  height: 260px !important;
-  width: 100%;
-  object-fit: cover;
-  transform: scale(1);
+h4.card-title {
+  font-size: 1.3rem !important;
 }
-
-/* a.z-depth-2   {
-  display: block !important;
-  overflow: hidden !important;
-}
-
-.globalImgCard a:hover .globalImg  {
-  transform: scale(1.5) !important;
-} */
 
 .globalImg {
   width: 100%;
-  height: auto;
-  transform: scale(1.1);
 }
 
 .globalButton {
@@ -87,7 +125,6 @@ a.z-depth-2 {
   display: flex;
   list-style: none;
   height: 40px;
-  /* border: 1px solid #bdbdbd; */
   border: none;
   border-radius: 5px;
   width: fit-content;
@@ -109,6 +146,58 @@ a.z-depth-2 {
 }
 
 
+
+/* ----------------------------------------------- 
+# FOOTER 
+------------------------------------------------ */
+
+footer.black {
+  background: #1c1c1c !important;
+}
+
+
+/* ----------------------------------------------- 
+# BREAKPOINTS 
+------------------------------------------------ */
+
+@media screen and (max-width: 768px) {
+
+  /* GENERAL */
+
+  .mTop {
+    margin-top: 25%;
+  }
+
+  /* CAROUSEL */
+
+  .carousel {
+    height: 40vh;
+  }
+
+  .carousel .carousel-item img {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .carousel-caption {
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%, -50%);
+  }
+
+  .carousel .carousel-caption .h3-responsive {
+    font-size: 1.6rem !important;
+  }
+
+  .carousel .carousel-caption p {
+    font-size: 0.9rem !important;
+  }
+
+}
+
 @media screen and (min-width: 768px) {
   .globalImg {
     width: 100%;
@@ -127,4 +216,17 @@ a.z-depth-2 {
     width: 35%;
     margin: 0 auto;
   }
+
+  .cardCarousel {
+    height: 25rem !important;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .carousel-inner .carousel-item img {
+     height: 40rem !important;
+     object-fit: cover !important;
+  }
+
 }

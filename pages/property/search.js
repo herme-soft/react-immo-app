@@ -24,18 +24,20 @@ const Search = () => {
     }, [router.query.title, router.query.category])
 
     return (
-        <Layout>
-           <div className="container">
-               <SearchFilter />
-               {router.query.category || router.query.title ? (
-                    <div>
-                        <div className="mb-4 text-center globalColor font-weight-bolder">
-                            {properties.size} Bien(s) trouvé(s)
-                        </div>
-                        <Card properties={properties.data} />
-                    </div>
-                ) : null}
-           </div>
+        <Layout footer>
+            <section className="search section">
+                <div className="container">
+                    <SearchFilter />
+                    {router.query.category || router.query.title ? (
+                            <div>
+                                <div className="mb-4 text-center globalColor font-weight-bolder">
+                                    {properties.size} Bien(s) trouvé(s)
+                                </div>
+                                <Card properties={properties.data} />
+                            </div>
+                        ) : null}
+                </div>
+           </section>
         </Layout>
     )
 }

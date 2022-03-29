@@ -4,17 +4,22 @@ import { priceFormatted } from "./helpers";
 import Link from "next/link"
 
 export const Card = ({ properties }) => {
+
+    const styles = {
+        padding: "0.5rem"
+    }
+
   return (
       <>
         {
             properties && properties.map(property => (
                 <MDBCard className="p-2 my-3" key={property._id}>
-                    <MDBCardBody>
+                    <MDBCardBody style={styles}>
                         <MDBRow>
                             <MDBCol lg="5">
                                 <Link href="/property/[slug]" as={`/property/${property.slug}`}>
                                     <a className="rounded z-depth-2 mb-lg-0 mb-4">
-                                        <img src={property.pictures[0]} alt={property.title} className="globalImgCard" />
+                                        <img src={property.pictures[0]} alt={property.title} className="listImg" />
                                     </a>
                                 </Link>
                             </MDBCol>
@@ -50,6 +55,35 @@ export const Card = ({ properties }) => {
             ))
         }
 
+        <style jsx>
+            {
+                `.listImg {
+                    height: 250px;
+                    width: 100%;
+                    object-fit: cover;
+                    transform: scale(1.1);
+                    transition: .2s ease-in-out;
+                }
+
+                .listImg {
+                    width: 100%;
+                    object-fit: cover;
+                    transform: scale(1.1);
+                    transition: .2s ease-in-out;
+                }
+                  
+                a.z-depth-2   {
+                    display: block;
+                    overflow: hidden;
+                }
+                  
+                a.z-depth-2:hover .listImg  {
+                    transform: scale(1.5);
+                    transition: .2s ease-in-out;
+                }
+                `
+            }
+        </style>
     </>
   );
 }

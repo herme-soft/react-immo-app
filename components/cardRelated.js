@@ -2,12 +2,10 @@ import React from 'react'
 import Link from "next/link"
 import {
     MDBCard,
-    MDBCardBody,
     MDBCardHeader,
     MDBCardFooter,
     MDBCol,
     MDBRow,
-    MDBCardImage
 } from "mdbreact"
 import { priceFormatted } from './helpers'
 
@@ -17,17 +15,13 @@ export const CardRelated = ({ properties }) => {
             {
                 properties && properties.map(property => (
                     <MDBCol className="mb-3" md="4" lg="4" key={property._id}>
-                        <MDBCard className="bdCard">
+                        <MDBCard className="mb-3">
                             <MDBCardHeader>
                                {property.title}
                             </MDBCardHeader>
-                            {/* <img
-                                src={property.pictures[0]}
-                                className="globalImg bdRadius"
-                            /> */}
                              <Link href="/property/[slug]" as={`/property/${property.slug}`}>
                                 <a className="rounded z-depth-2 mb-lg-0 mb-4">
-                                    <img src={property.pictures[0]} alt={property.title} className="d-block w-100" />
+                                    <img src={property.pictures[0]} alt={property.title} className="similarImgCard d-block w-100" />
                                 </a>
                             </Link>
                             <MDBCardFooter>
@@ -42,6 +36,36 @@ export const CardRelated = ({ properties }) => {
                     </MDBCol>
                 ))
             }
+
+            <style jsx>
+                {
+                    `.similarImgCard {
+                        height: 210px;
+                        width: 100%;
+                        object-fit: cover;
+                        transform: scale(1.1);
+                        transition: .2s ease-in-out;
+                    }
+
+                    .similarImgCard {
+                        width: 100%;
+                        object-fit: cover;
+                        transform: scale(1.1);
+                        transition: .2s ease-in-out;
+                    }
+                    
+                    a.z-depth-2   {
+                        display: block;
+                        overflow: hidden;
+                    }
+                    
+                    a.z-depth-2:hover .similarImgCard  {
+                        transform: scale(1.5);
+                        transition: .2s ease-in-out;
+                    }
+                    `
+                }
+            </style>
         </MDBRow>
     )
 }

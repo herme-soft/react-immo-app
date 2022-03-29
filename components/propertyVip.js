@@ -13,6 +13,11 @@ import {
 from "mdbreact";
 
 export const PropertyVip = ({ properties }) => {
+
+    const styles = {
+        height: "220px"
+    }
+
     return (
             <>
                 <h2 className="h2-responsive font-weight-bold text-center my-4 globalColor">Biens sponsorisés</h2>  
@@ -37,12 +42,9 @@ export const PropertyVip = ({ properties }) => {
                     {properties && properties.map(property => (
                         <MDBCol md="4" lg="4" key={property._id}>
                             <MDBCard>
-                                {/* <div>
-                                    <img src={property.pictures[0]} alt={property.title} className="globalImg bdRadius" />
-                                </div> */}
                                 <Link href="/property/[slug]" as={`/property/${property.slug}`}>
                                     <a className="rounded z-depth-2 mb-lg-0 mb-4">
-                                        <img src={property.pictures[0]} alt={property.title} className="globalImgCard" />
+                                        <img src={property.pictures[0]} alt={property.title} style={styles} className="globalImgCard" />
                                     </a>
                                 </Link>
                                 <MDBCardBody>
@@ -55,6 +57,32 @@ export const PropertyVip = ({ properties }) => {
                         </MDBCol>
                     ))}
                 </MDBRow> 
+
+                <style jsx>
+                    {
+                        `.globalImgCard {
+                            width: 100%;
+                            object-fit: cover;
+                            transform: scale(1.1);
+                            transition: .2s ease-in-out;
+                        }
+                        
+                        a.z-depth-2   {
+                            display: block;
+                            overflow: hidden !important;
+                            border-top-left-radius: 0 !important;
+                            border-top-right-radius: 0 !important;
+                            border-bottom-left-radius: 0 !important;
+                            border-bottom-right-radius: 0 !important;
+                        }
+                        
+                        a.z-depth-2:hover .globalImgCard  {
+                            transform: scale(1.5) !important;
+                            transition: .2s ease-in-out;
+                        } 
+                        `
+                    }
+                </style>
             </>
         )
    }

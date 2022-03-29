@@ -25,6 +25,7 @@ const Properties = ({ properties, currentPage, pageCount }) => {
 
     return (
         <Layout footer>
+          <section className="properties section">
             <MDBContainer>
                 {/* {JSON.stringify(properties)} */}
                 <SearchFilter />
@@ -45,6 +46,7 @@ const Properties = ({ properties, currentPage, pageCount }) => {
                     />
                 </div>
             </MDBContainer>
+          </section>
         </Layout>
     )
 }

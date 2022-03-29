@@ -10,6 +10,7 @@ import api from "../../auth/axios"
 import useSWR from "swr"
 import Moment from "react-moment"
 import { priceFormatted } from '../../components/helpers'
+import { MDBContainer } from "mdbreact";
 
 const fetcher = url => api.get(url).then(res => res.data)
 
@@ -48,14 +49,18 @@ const PropertyList = () => {
 
     return (
         <Layout>
-            <MDBDataTableV5 
-                data={datatable}
-                entries={5}
-                pageAmount={4}
-                paginTop
-                searchTop
-                searchBottom={false}
-            />
+            <section className="list section">
+                <MDBContainer>
+                    <MDBDataTableV5 
+                        data={datatable}
+                        entries={5}
+                        pageAmount={4}
+                        paginTop
+                        searchTop
+                        searchBottom={false}
+                    />
+                </MDBContainer>
+            </section>
         </Layout>
     )
 }
