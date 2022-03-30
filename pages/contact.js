@@ -107,7 +107,7 @@ const ContactPage = () => {
                                 <button id="btn-phone" className="btn btn-primary btn-contact accent-1 bd-radius">
                                     <MDBIcon icon="phone" style={styles} />
                                 </button>
-                                <p>514 854 6347</p>
+                                <p>(514) 854 6347</p>
                                 <p className="mb-md-0">Mon - Fri, 8:00-22:00</p>
                             </MDBCol>
 

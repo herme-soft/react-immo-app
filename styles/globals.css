@@ -53,6 +53,11 @@ nav {
   text-align: center;
 } 
 
+.carousel .carousel-control-prev-icon, .carousel .carousel-control-next-icon {
+  width: 55px !important;
+  height: 55px !important; 
+}
+
 .h3-responsive {
   font-size: 3rem !important;
   font-weight: 600;
@@ -194,6 +199,15 @@ footer.black {
 
   .carousel .carousel-caption p {
     font-size: 0.9rem !important;
+  }
+
+  .carousel-control-next, .carousel-control-prev {
+    top: 10% !important;
+  }
+
+  .carousel .carousel-control-prev-icon, .carousel .carousel-control-next-icon {
+    width: 40px !important;
+    height: 40px !important;
   }
 
 }

@@ -28,7 +28,7 @@ export const Footer = () => {
               </Link>
               <ul className="list-unstyled">
                 <li>8559 rue Ontario, Montréal</li>
-                <li>(514) 555 5555</li>
+                <li>(514) 854 6347</li>
                 <li>Lundi - Vendredi, 8:00 - 20:00</li>
                 <li>info@gmail.com</li>
                 <li>echotrade@gmail.com</li>
@@ -40,7 +40,7 @@ export const Footer = () => {
             <ul className="list-unstyled">
               <li>
                 <Link href="/">
-                    <a className="nav-link">
+                    <a>
                       Home
                     </a>
                 </Link>
@@ -49,7 +49,7 @@ export const Footer = () => {
                   {
                     isAuthenticated && user.role === "admin" && (
                         <Link href="/property/list" passHref>
-                            <a className="nav-link">
+                            <a>
                                 Dashboard
                             </a>
                         </Link>
@@ -58,14 +58,14 @@ export const Footer = () => {
               </li>
               <li>
                 <Link href="/properties" passHref>
-                    <a className="nav-link">
+                    <a>
                         Liste des biens
                     </a>
                 </Link>
               </li>
               <li>
                 <Link href="/contact" passHref>
-                    <a className="nav-link">
+                    <a>
                         Contact
                     </a>
                 </Link>
@@ -113,7 +113,7 @@ export const Footer = () => {
       </MDBContainer>
       <div className="footer-copyright text-center py-3">
         <MDBContainer fluid>
-          &copy; {new Date().getFullYear()} Copyright: <a href="/"> EchoTrade.com </a>
+          &copy; {new Date().getFullYear()} Copyright: <Link href="/"><a> EchoTrade.com</a></Link>
         </MDBContainer>
       </div>
       
